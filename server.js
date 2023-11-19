@@ -1,10 +1,12 @@
 const http = require('http');
 const fs =require('fs');
-
+const _ =require('lodash');
 
 const server = http.createServer((req, res)=>{
 
-console.log(req.url ,req.method);
+// console.log(req.url ,req.method);
+const num = _.random(0,20);
+console.log(num);
 res.setHeader('content-type', test/html);
 
 fs.readFile('./assets/index.html',(err, data)=>{
