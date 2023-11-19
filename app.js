@@ -19,3 +19,13 @@ app.get('/past work' , (req, res)=>{
     res.sendFile('./assets/past work.html', {root:__dirname});
 });
 
+
+//redirect ----------------------
+app.get('/omar' , (req, res)=>{
+res.redirect('/about')
+});
+
+//404----------------------
+app.use((req, res)=>{
+res.send('<h1>404 opssss</h1>')
+} )
