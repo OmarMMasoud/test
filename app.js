@@ -1,7 +1,14 @@
 const exprees = require('express');
-
+const mongoose =require('mongoose');
+//consect to mono
+const dburi = 'mongodb+srv://fnrmx50:Aa123456789@cluster0.pi7pxpi.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(dburi, {useNewUrlParser: true, useUnifiedTopology: true});
 //express app
 const app = exprees();
+
+
+//view engin
+app.get('view engine','ejs');
 
 // listen for requiest 
 app.listen(3000);
@@ -25,7 +32,7 @@ app.get('/omar' , (req, res)=>{
 res.redirect('/about')
 });
 
-//404----------------------
+//404---------------------- the last one always
 app.use((req, res)=>{
-res.send('<h1>404 opssss</h1>')
+res.status(404).send('<h1>404 opssss</h1>')
 } )
